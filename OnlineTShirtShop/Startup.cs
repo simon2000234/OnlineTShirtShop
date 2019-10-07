@@ -66,6 +66,8 @@ namespace OnlineTShirtShop
                 }
                 else
                 {
+                    var ctx = scope.ServiceProvider.GetService<OTSSContext>();
+                    ctx.Database.EnsureCreated();
                     app.UseHsts();
                 }
 

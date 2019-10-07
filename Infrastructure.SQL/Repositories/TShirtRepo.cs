@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using OTSSCore.DomainServices;
 using OTSSCore.Entities;
 
@@ -26,7 +27,9 @@ namespace Infrastructure.SQL.Repositories
 
         public TShirt CreateTshirt(TShirt NewTShirt)
         {
-            throw new System.NotImplementedException();
+            _context.Attach(NewTShirt).State = EntityState.Added;
+            _context.SaveChanges();
+            return NewTShirt;
         }
 
         public TShirt DeleteTShirt(int id)

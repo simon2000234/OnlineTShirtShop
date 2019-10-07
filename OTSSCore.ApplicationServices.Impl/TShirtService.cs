@@ -35,7 +35,7 @@ namespace OTSSCore.ApplicationServices.Impl
 
         public TShirt CreateTshirt(TShirt NewTShirt)
         {
-            throw new System.NotImplementedException();
+            return _repo.CreateTshirt(NewTShirt);
         }
     }
 }
