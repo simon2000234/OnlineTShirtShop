@@ -10,6 +10,13 @@ namespace Infrastructure.SQL
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TShirt>().HasKey(ts => ts.Id);
+        }
+
+
         public DbSet<TShirt> TShirts { get; set; }
     }
 }
