@@ -5,7 +5,7 @@ namespace OTSSCore.DomainServices
 {
     public interface ITShirtRepository
     {
-        List<TShirt> GetAllTshirts();
+        List<TShirt> GetAllTshirts(Filter filter);
 
         TShirt GetTShirt(int id);
 
@@ -14,5 +14,7 @@ namespace OTSSCore.DomainServices
         TShirt DeleteTShirt(int id);
 
         TShirt UpdateTshirt(TShirt tshirt);
+
+        int Count();
     }
 }

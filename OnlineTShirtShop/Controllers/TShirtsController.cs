@@ -20,13 +20,20 @@ namespace OnlineTShirtShop.Controllers
             _tShirtService = tShirtService;
         }
 
-        // GET api/owners
+        // GET api/pets
         [HttpGet]
-        public ActionResult<IEnumerable<TShirt>> Get()
+        public ActionResult<IEnumerable<TShirt>> Get([FromQuery] Filter filter)
         {
             try
             {
-                return _tShirtService.GetAllTshirts();
+                if(filter.CurrentPage==0 || filter.ItemsPrPage ==0)
+                {
+                    return _tShirtService.GetAllTshirts();
+                }
+                else
+                {
+                    return _tShirtService.GetFilteredTShirts(filter);
+                }
             }
             catch (Exception e)
             {

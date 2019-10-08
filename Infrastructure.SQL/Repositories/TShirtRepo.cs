@@ -15,9 +15,17 @@ namespace Infrastructure.SQL.Repositories
             _context = context;
         }
 
-        public List<TShirt> GetAllTshirts()
+        public List<TShirt> GetAllTshirts(Filter filter)
         {
-            return _context.TShirts.ToList();
+            
+            if (filter == null)
+            {
+                return _context.TShirts.ToList();
+            }
+
+            return _context.TShirts.
+                Skip((filter.CurrentPage - 1) * filter.ItemsPrPage).
+                Take(filter.ItemsPrPage).ToList();
         }
 
         public TShirt GetTShirt(int id)
@@ -46,6 +54,11 @@ namespace Infrastructure.SQL.Repositories
             _context.SaveChanges();
 
             return tshirt;
+        }
+
+        public int Count()
+        {
+            return _context.TShirts.Count();
         }
     }
 }

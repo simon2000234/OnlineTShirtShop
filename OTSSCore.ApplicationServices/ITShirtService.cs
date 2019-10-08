@@ -14,5 +14,7 @@ namespace OTSSCore.ApplicationServices
         TShirt DeleteTShirt(int id);
 
         TShirt UpdateTshirt(TShirt tshirt);
+
+        List<TShirt> GetFilteredTShirts(Filter filter);
     }
 }
