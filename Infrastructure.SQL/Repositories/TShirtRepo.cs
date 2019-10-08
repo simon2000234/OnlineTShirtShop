@@ -22,7 +22,7 @@ namespace Infrastructure.SQL.Repositories
 
         public TShirt GetTShirt(int id)
         {
-            throw new System.NotImplementedException();
+            return _context.TShirts.FirstOrDefault(ts => ts.Id == id);
         }
 
         public TShirt CreateTshirt(TShirt NewTShirt)
@@ -34,12 +34,18 @@ namespace Infrastructure.SQL.Repositories
 
         public TShirt DeleteTShirt(int id)
         {
-            throw new System.NotImplementedException();
+            var tshirt = _context.Remove(new TShirt { Id = id }).Entity;
+            _context.SaveChanges();
+            return tshirt;
         }
 
         public TShirt UpdateTshirt(TShirt tshirt)
         {
-            throw new System.NotImplementedException();
+            _context.Attach(tshirt).State = EntityState.Modified;
+
+            _context.SaveChanges();
+
+            return tshirt;
         }
     }
 }

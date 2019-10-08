@@ -30,7 +30,7 @@ namespace OnlineTShirtShop.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest("Who da fuck knows");
+                return BadRequest(e.Message);
             }
         }
 
@@ -58,22 +58,36 @@ namespace OnlineTShirtShop.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest("No owner with that id");
+                return BadRequest(e.Message);
             }
         }
 
         // PUT api/owners/5
         [HttpPut("{id}")]
-        public TShirt Put(int id, [FromBody] TShirt tShirt)
+        public ActionResult<TShirt> Put(int id, [FromBody] TShirt tShirt)
         {
-            return _tShirtService.UpdateTshirt(tShirt);
+            try
+            {
+                return _tShirtService.UpdateTshirt(tShirt);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         // DELETE api/owenrs/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult<TShirt> Delete(int id)
         {
-            _tShirtService.DeleteTShirt(id);
+            try
+            {
+                return _tShirtService.DeleteTShirt(id);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
     }
 }

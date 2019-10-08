@@ -20,17 +20,17 @@ namespace OTSSCore.ApplicationServices.Impl
 
         public TShirt GetTShirt(int id)
         {
-            throw new System.NotImplementedException();
+            return _repo.GetTShirt(id);
         }
 
         public TShirt DeleteTShirt(int id)
         {
-            throw new System.NotImplementedException();
+            return _repo.DeleteTShirt(id);
         }
 
         public TShirt UpdateTshirt(TShirt tshirt)
         {
-            throw new System.NotImplementedException();
+            return _repo.UpdateTshirt(tshirt);
         }
 
         public TShirt CreateTshirt(TShirt NewTShirt)
