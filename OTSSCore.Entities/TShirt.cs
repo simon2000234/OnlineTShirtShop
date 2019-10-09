@@ -10,5 +10,6 @@ namespace OTSSCore.Entities
         public string Color { get; set; }
         public string Type { get; set; }
         public bool IsMan { get; set; }
+        public string ImgLink { get; set; }
     }
 }
