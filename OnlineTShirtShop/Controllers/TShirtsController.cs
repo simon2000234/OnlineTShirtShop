@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OTSSCore.ApplicationServices;
@@ -22,6 +23,7 @@ namespace OnlineTShirtShop.Controllers
 
         // GET api/pets
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<TShirt>> Get([FromQuery] Filter filter)
         {
             try
@@ -43,6 +45,7 @@ namespace OnlineTShirtShop.Controllers
 
         // POST api/owners
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<TShirt> Post([FromBody] TShirt tShirt)
         {
             try
@@ -57,6 +60,7 @@ namespace OnlineTShirtShop.Controllers
 
         // GET api/owners/5
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<TShirt> Get(int id)
         {
             try
@@ -70,6 +74,7 @@ namespace OnlineTShirtShop.Controllers
         }
 
         // PUT api/owners/5
+        [Authorize(Roles = "Administrator")]
         [HttpPut("{id}")]
         public ActionResult<TShirt> Put(int id, [FromBody] TShirt tShirt)
         {
@@ -85,6 +90,7 @@ namespace OnlineTShirtShop.Controllers
 
         // DELETE api/owenrs/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<TShirt> Delete(int id)
         {
             try

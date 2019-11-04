@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTShirtShop", "OnlineTShirtShop\OnlineTShirtShop.csproj", "{EF67E8C5-663B-47F5-AC0D-7F5A320555B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineTShirtShop", "OnlineTShirtShop\OnlineTShirtShop.csproj", "{EF67E8C5-663B-47F5-AC0D-7F5A320555B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{3C6A3B59-778D-4F89-ABB2-0B8BCA08EB48}"
 EndProject
@@ -11,21 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OTSSCore", "OTSSCore", "{29A74E74-2909-43DB-A244-79EA1A224018}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTSSCore.Entities", "OTSSCore.Entities\OTSSCore.Entities.csproj", "{79768FF3-D11E-40EF-873C-1E3D35FBF1A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTSSCore.Entities", "OTSSCore.Entities\OTSSCore.Entities.csproj", "{79768FF3-D11E-40EF-873C-1E3D35FBF1A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{5D7D8C98-44B4-4049-B66D-57F7C1D2444C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{A64FE1EA-99C3-4074-91C5-1D3323C84048}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTSSCore.DomainServices", "OTSSCore.DomainServices\OTSSCore.DomainServices.csproj", "{1D7C045B-B88A-4B0C-9D77-0525CE8AA472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTSSCore.DomainServices", "OTSSCore.DomainServices\OTSSCore.DomainServices.csproj", "{1D7C045B-B88A-4B0C-9D77-0525CE8AA472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTSSCore.ApplicationServices", "OTSSCore.ApplicationServices\OTSSCore.ApplicationServices.csproj", "{805025EC-6629-436E-BB4F-45D605DEF0A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTSSCore.ApplicationServices", "OTSSCore.ApplicationServices\OTSSCore.ApplicationServices.csproj", "{805025EC-6629-436E-BB4F-45D605DEF0A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.SQL", "Infrastructure.SQL\Infrastructure.SQL.csproj", "{E9ACDBAA-D2F9-497F-9936-4CCEDFE4F59B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.SQL", "Infrastructure.SQL\Infrastructure.SQL.csproj", "{E9ACDBAA-D2F9-497F-9936-4CCEDFE4F59B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impl", "Impl", "{33F07F0C-9A5B-4FC1-B895-8AFE73064861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTSSCore.ApplicationServices.Impl", "OTSSCore.ApplicationServices.Impl\OTSSCore.ApplicationServices.Impl.csproj", "{567EE28C-03D1-4716-B845-713B48B64466}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTSSCore.ApplicationServices.Impl", "OTSSCore.ApplicationServices.Impl\OTSSCore.ApplicationServices.Impl.csproj", "{567EE28C-03D1-4716-B845-713B48B64466}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
