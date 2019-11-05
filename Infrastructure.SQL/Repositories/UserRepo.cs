@@ -15,20 +15,34 @@ namespace Infrastructure.SQL.Repositories
             _context = context;
         }
 
-        public List<User> GetAllUsers()
+        public List<User> GetAllUsers(Filter filter)
         {
-            return _context.Users.ToList();
+            if (filter == null)
+            {
+                return _context.Users
+                    .Select(u => new User { Id = u.Id, IsAdmin = u.IsAdmin, Username = u.Username })
+                    .ToList(); ;
+            }
+            return _context.Users
+                .Select(u => new User{Id = u.Id, IsAdmin = u.IsAdmin, Username = u.Username })
+                .Skip((filter.CurrentPage - 1) * filter.ItemsPrPage)
+                .Take(filter.ItemsPrPage)
+                .ToList();
         }
 
         public User GetUser(int id)
         {
-            return _context.Users.FirstOrDefault(u => u.Id == id);
+            return _context.Users
+                .Select(u => new User { Id = u.Id, IsAdmin = u.IsAdmin, Username = u.Username })
+                .FirstOrDefault(u => u.Id == id);
         }
 
         public User CreateUser(User user)
         {
             _context.Attach(user).State = EntityState.Added;
             _context.SaveChanges();
+            user.PasswordSalt = null;
+            user.PasswordHash = null;
             return user;
         }
 
@@ -36,6 +50,8 @@ namespace Infrastructure.SQL.Repositories
         {
             _context.Attach(user).State = EntityState.Modified;
             _context.SaveChanges();
+            user.PasswordSalt = null;
+            user.PasswordHash = null;
             return user;
         }
 
@@ -43,7 +59,14 @@ namespace Infrastructure.SQL.Repositories
         {
             var user = _context.Remove(new User { Id = id }).Entity;
             _context.SaveChanges();
+            user.PasswordSalt = null;
+            user.PasswordHash = null;
             return user;
+        }
+
+        public int Count()
+        {
+            return _context.Users.Count();
         }
     }
 }

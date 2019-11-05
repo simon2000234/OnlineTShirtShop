@@ -58,6 +58,7 @@ namespace OnlineTShirtShop
             services.AddScoped<ITShirtRepository, TShirtRepo>();
             services.AddScoped<ITShirtService, TShirtService>();
             services.AddScoped<IUserRepository, UserRepo>();
+            services.AddScoped<IUserService, UserService>();
             services.AddSingleton<IAuthenticationHelper>(new AuthenticationHelper(secretBytes));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors();

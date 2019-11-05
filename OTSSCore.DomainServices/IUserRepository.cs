@@ -5,10 +5,12 @@ namespace OTSSCore.DomainServices
 {
     public interface IUserRepository
     {
-        List<User> GetAllUsers();
+        List<User> GetAllUsers(Filter filter);
         User GetUser(int id);
         User CreateUser(User user);
         User UpdateUser(User user);
         User DeleteUser(int id);
+        int Count();
+
     }
 }
