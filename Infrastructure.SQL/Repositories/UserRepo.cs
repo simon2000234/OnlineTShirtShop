@@ -64,6 +64,11 @@ namespace Infrastructure.SQL.Repositories
             return user;
         }
 
+        public List<User> LogIn()
+        {
+            return _context.Users.ToList();
+        }
+
         public int Count()
         {
             return _context.Users.Count();

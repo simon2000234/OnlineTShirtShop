@@ -24,31 +24,32 @@ namespace OTSSCore.ApplicationServices.Impl
             return _userRepository.GetUser(id);
         }
 
-        public User CreateUser(string UserName, string password, bool isAdmin)
+        public User CreateUser(UserLogin userLogin)
         {
             byte[] passwordSalt, passwordHash;
-            CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            CreatePasswordHash(userLogin.Password, out passwordHash, out passwordSalt);
             User user = new User()
             {
-                IsAdmin = isAdmin,
+                IsAdmin = userLogin.IsAdmin,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
-                Username = UserName
+                Username = userLogin.Username
             };
             return _userRepository.CreateUser(user);
 
         }
 
-        public User UpdateUser(string UserName, string password, bool isAdmin)
+        public User UpdateUser(UserLogin userLogin)
         {
             byte[] passwordSalt, passwordHash;
-            CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            CreatePasswordHash(userLogin.Password, out passwordHash, out passwordSalt);
             User user = new User()
             {
-                IsAdmin = isAdmin,
+                Id = userLogin.Id,
+                IsAdmin = userLogin.IsAdmin,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
-                Username = UserName
+                Username = userLogin.Username
             };
             return _userRepository.UpdateUser(user);
 

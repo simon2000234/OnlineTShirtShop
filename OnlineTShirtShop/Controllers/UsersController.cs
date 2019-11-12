@@ -43,11 +43,11 @@ namespace OnlineTShirtShop.Controllers
 
         // POST api/owners
         [HttpPost]
-        public ActionResult<TShirt> Post([FromBody] string username, string password, bool isAdmin)
+        public ActionResult<TShirt> Post([FromBody] UserLogin user)
         {
             try
             {
-                return Ok(_userService.CreateUser(username, password, isAdmin));
+                return Ok(_userService.CreateUser(user));
             }
             catch (Exception e)
             {
@@ -71,11 +71,11 @@ namespace OnlineTShirtShop.Controllers
 
         // PUT api/owners/5
         [HttpPut("{id}")]
-        public ActionResult<TShirt> Put(int id, [FromBody] string UserName, string password, bool isAdmin)
+        public ActionResult<TShirt> Put(int id, [FromBody] UserLogin user)
         {
             try
             {
-                return Ok(_userService.UpdateUser(UserName, password, isAdmin));
+                return Ok(_userService.UpdateUser(user));
             }
             catch (Exception e)
             {

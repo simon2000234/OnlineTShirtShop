@@ -27,7 +27,7 @@ namespace OnlineTShirtShop.Controllers
         [HttpPost]
         public IActionResult Login([FromBody]LoginInputModel model)
         {
-            var user = repository.GetAllUsers(null).FirstOrDefault(u => u.Username == model.Username);
+            var user = repository.LogIn().FirstOrDefault(u => u.Username == model.Username);
 
             // check if username exists
             if (user == null)

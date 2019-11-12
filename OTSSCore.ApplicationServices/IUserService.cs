@@ -7,8 +7,8 @@ namespace OTSSCore.ApplicationServices
     {
         List<User> GetAllUsers();
         User GetUser(int id);
-        User CreateUser(string UserName, string password, bool isAdmin);
-        User UpdateUser(string UserName, string password, bool isAdmin);
+        User CreateUser(UserLogin userlogin);
+        User UpdateUser(UserLogin userlogin);
         User DeleteUser(int id);
         List<User> GetFilteredUsers(Filter filter);
     }
